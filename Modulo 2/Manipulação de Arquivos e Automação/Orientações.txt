@@ -1,1 +1,0 @@
-Aqui nessa pasta, vocês vão salvar todas as atividades referentes a manipulação de arquivos e automação, pyautogui, biblioteca os, biblioteca csv, json etc
