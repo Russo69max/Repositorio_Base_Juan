@@ -15,19 +15,20 @@ def start():
 
     @app.route('/soma')
     def soma():
-        return (f"soma dos numeros requisitados {numero1+numero2}")
+        return (f"soma dos numeros requisitados:{numero1+numero2}")
 
     @app.route('/subtração')
     def subtração():
-        return (f"subtração dos numeros requisitados {numero1-numero2}")
+        return (f"subtração dos numeros requisitados:{numero1-numero2}")
 
     @app.route('/divisão')
     def divisão():
-        return (f"divisão dos numeros requisitados {numero1/numero2}")
+        return (f"divisão dos numeros requisitados:{numero1/numero2}")
 
     @app.route('/multiplicação')
     def multiplicação():
-        return (f"multiplicação dos numeros requisitados {numero1*numero2}")
+        return (f"multiplicação dos numeros requisitados:{numero1*numero2}")
     if __name__=="__main__":
         app.run(debug=True)
+
 start()
