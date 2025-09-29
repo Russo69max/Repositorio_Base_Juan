@@ -9,5 +9,6 @@ try:
     else:
         print("Erro não encontrado | status:",repota )
 except:
-    print("Ezequiel deu a bunda por isso nao funcionou ")
+    print("Não funcionou ")
+
 
