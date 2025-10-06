@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio - Juan Pedro</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000000; /* fundo preto */
+      color: white; /* texto branco */
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+      /* sombra suave no fundo da página */
+      position: relative;
+    }
+
+    /* Sombra atrás da caixa */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255, 255, 255, 0.1);
+      filter: blur(60px);
+      z-index: -1;
+    }
+
+    .container {
+      background: #111111; /* cinza bem escuro */
+      border-radius: 15px;
+      padding: 2.5rem 3.5rem;
+      max-width: 450px;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.3); /* sombra destacada */
+      transform-origin: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 1.5rem 0;
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+
+    a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <h1>Juan Pedro Freitas da Silva</h1>
+    <p><strong>Escola:</strong> Colégio Municipal Tenente General Gaspar de Godó</p>
+    <p><strong>Local:</strong> Santana de Parnaíba</p>
+    <p><strong>Série:</strong> 1º ano do Ensino Médio</p>
+    <p><strong>Cursando:</strong> Módulo 2 de Python</p>
+    <p><strong>Telefone:</strong> +55 11 97790-7970</p>
+    <p><strong>E-mail:</strong> pedrofreitasjuan@gmail.com</p>
+    <p><strong>Habilidades:</strong> Frontend básico, Backend básico, Criação de páginas e aplicativos</p>
+    <p>
+      <strong>Exemplo de projeto:</strong><br />
+      <a href="https://github.com/Russo69max/Repositorio_Base_Juan/blob/main/Modulo%202/Extra/app_cadastro_login_banco_dados.py" target="_blank" rel="noopener noreferrer">
+        Código do app cadastro/login com banco de dados
+      </a>
+    </p>
+  </div>
+
+  <script>
+    const container = document.getElementById('container');
+    const elements = container.children;
+    let index = 0;
+
+    function shakeScreen() {
+      container.style.transition = 'transform 0.1s';
+      container.style.transform = 'translateX(10px)';
+      setTimeout(() => {
+        container.style.transform = 'translateX(-10px)';
+        setTimeout(() => {
+          container.style.transform = 'translateX(0)';
+        }, 100);
+      }, 100);
+    }
+
+    function animateNext() {
+      if (index >= elements.length) return;
+
+      const el = elements[index];
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+
+      shakeScreen();
+
+      index++;
+      setTimeout(animateNext, 700);
+    }
+
+    window.onload = () => {
+      animateNext();
+    };
+  </script>
+</body>
+</html>
